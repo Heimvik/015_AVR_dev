@@ -25,12 +25,16 @@ ISR(TIMER1_COMPA_vect){
 int main(){
     initHeartBeat();
     initUart(0);
-    initPWM(PWM_0,10,PWM0_PRESCALER);
+    //initPWM(PWM_0,10,PWM0_PRESCALER);
     initTC1Interrupt(CHANNEL_A,1,1024);
-    sei();
+    //sei();
 
     
     while(1){
+
+        putCharUart('X');
+        _delay_ms(1000);
+        putCharUart('Y');
         _delay_ms(1000);
     }
     return 0;
